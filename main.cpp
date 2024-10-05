@@ -1,4 +1,6 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 using namespace std;
 
 const int SIZE = 7;  
@@ -16,6 +18,7 @@ void insert_node(Node *&, int, float);
 void delete_linked_list(Node *&);
 
 int main() {
+    srand(time(0));
     Node *head = nullptr;
 
     // create a linked list of size SIZE with random numbers 0-99
@@ -57,19 +60,19 @@ void output(Node * hd) {
     cout << endl;
 }
 
-void add_node_front(){
+void add_node_front(Node *&head, float value){
     Node *new_node = new Node;
     new_node->value = value;
     new_node->next = head;
-    head = newnode;
+    head = new_node;
 }
 
-void add_node_tail(){
-    Node *newnode = new Node;
+void add_node_tail(Node *&head, float value){
+    Node *new_node = new Node;
     new_node->value = value;
     new_node->next = nullptr;
     if (!head) {
-        head = newnde;
+        head = new_node;
     } else {
         Node *current = head;
         while (current->next) {
@@ -79,7 +82,7 @@ void add_node_tail(){
     }
 }
 
-void delete_node(){
+void delete_node(Node *&head, int position){
     if (!head || position < 1) return;
     Node *current = head;
     Node *prev = nullptr;
@@ -98,9 +101,9 @@ void delete_node(){
     }
 }
 
-void insert_node(){
-    if (position < 1) return; // Invalid position
-    Node *new_node = new Node
+void insert_node(Node *&head, int position, float value){
+    if (position < 1) return;
+    Node *new_node = new Node;
     new_node->value = value;
     Node *current = head;
     for (int i = 1; current && i < position; i++) {
@@ -108,12 +111,12 @@ void insert_node(){
     }
     if (current) {
         new_node->next = current->next;
-        current->next = newNode;
+        current->next = new_node;
     }
 }
 
-void delete_linked_list(){
-    node *current = head;
+void delete_linked_list(Node *&head){
+    Node *current = head;
     while (current){
         Node *nextNode = current->next;
         delete current;
