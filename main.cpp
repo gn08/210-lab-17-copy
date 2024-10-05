@@ -175,5 +175,10 @@ void insert_node(){
 }
 
 void delete_linked_list(){
-
+    node *current = head;
+    while (current){
+        Node *nextNode = current->next;
+        delete current;
+        current = nextNode;
+    }
 }
