@@ -120,14 +120,25 @@ void output(Node * hd) {
 }
 
 void add_node_front(){
-    Node *newnode = new Node;
-    newnode->value = value;
-    newnode->next = head;
+    Node *new_node = new Node;
+    new_node->value = value;
+    new_node->next = head;
     head = newnode;
 }
 
 void add_node_tail(){
-
+    Node *newnode = new Node;
+    new_node->value = value;
+    new_node->next = nullptr;
+    if (!head) {
+        head = newnde;
+    } else {
+        Node *current = head;
+        while (current->next) {
+            current = current->next;
+        }
+        current->next = new_node;
+    }
 }
 
 void delete_node(){
