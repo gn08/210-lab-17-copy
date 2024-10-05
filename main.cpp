@@ -35,11 +35,25 @@ int main() {
     cout << "Choice --> ";
     cin >> entry;
 
-    delete_node(head, entry);
-    output(head);
+    if (entry < 1 || entry > SIZE) { 
+        cout << "Invalid node number. Please enter a valid number." << endl;
+    } else {
+        delete_node(head, entry);
+        output(head);
+        SIZE--;
+    }
 
-    insert_node(head, entry, 10000);
-    output(head);
+    cout << "Enter position: ";
+    cin >> entry;
+
+if (entry < 1 || entry > SIZE + 1) { 
+        cout << "Invalid position." << endl;
+    } else {
+        insert_node(head, entry, 10000);
+        output(head);
+        SIZE++;
+    }
+    
     delete_linked_list(head);
     output(head);
 
@@ -106,12 +120,19 @@ void insert_node(Node *&head, int position, float value){
     Node *new_node = new Node;
     new_node->value = value;
     Node *current = head;
+    if (position == 1) {
+        new_node->next = head;
+        head = new_node;
+        return;
+    }
     for (int i = 1; current && i < position; i++) {
         current = current->next;
     }
     if (current) {
         new_node->next = current->next;
         current->next = new_node;
+    } else {
+        delete new_node;
     }
 }
 
