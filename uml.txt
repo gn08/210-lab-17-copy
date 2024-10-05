@@ -1,0 +1,28 @@
++------------------+
+|      Node        |
++------------------+
+| - value: float   |
+| - next: Node*    |
++------------------+
+|                  |
+|                  |
++------------------+
+
++----------------------------+
+|          Functions         |
++----------------------------+
+| + output(Node*): void      |
+| + add_node_front(Node*&, float): void |
+| + add_node_tail(Node*&, float): void  |
+| + delete_node(Node*&, int): void       |
+| + insert_node(Node*&, int, float): void|
+| + delete_linked_list(Node*&): void     |
++----------------------------+
+
++------------------+
+|      main()      |
++------------------+
+| + SIZE: int      |
++------------------+
+| + main(): int    |
++------------------+
