@@ -160,10 +160,18 @@ void delete_node(){
     }
 }
 
-}
-
 void insert_node(){
-
+    if (position < 1) return; // Invalid position
+    Node *new_node = new Node
+    new_node->value = value;
+    Node *current = head;
+    for (int i = 1; current && i < position; i++) {
+        current = current->next;
+    }
+    if (current) {
+        new_node->next = current->next;
+        current->next = newNode;
+    }
 }
 
 void delete_linked_list(){
