@@ -9,7 +9,6 @@ struct Node {
 };
 
 void output(Node *);
-
 void add_node_front(Node *&, float);
 void add_node_tail(Node *&, float);
 void delete_node(Node *&, int);
@@ -24,6 +23,7 @@ int main() {
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
         Node *newVal = new Node;
+        add_node_front(head, tmp_val);
         
         // adds node at head
         if (!head) { // if this is the first node, it's the new head
@@ -181,4 +181,5 @@ void delete_linked_list(){
         delete current;
         current = nextNode;
     }
+    head = nullptr;
 }
