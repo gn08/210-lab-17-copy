@@ -10,7 +10,11 @@ struct Node {
 
 void output(Node *);
 
-
+void add_node_front(Node *&, float);
+void add_node_tail(Node *&, float);
+void delete_node(Node *&, int);
+void insert_node(Node *&, int, float);
+void delete_linked_list(Node *&);
 
 int main() {
     Node *head = nullptr;
@@ -116,7 +120,11 @@ void output(Node * hd) {
 }
 
 void add_node_front(){
-
+    if (!hd){
+        cout << "Empty";
+        return 0;
+    }
+    int count
 }
 
 void add_node_tail(){
