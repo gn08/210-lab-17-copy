@@ -59,7 +59,7 @@ if (entry < 1 || entry > SIZE + 1) {
 
     return 0;
 }
-
+//displays stuff of nodes from list
 void output(Node * hd) {
     if (!hd) {
         cout << "Empty list.\n";
@@ -73,14 +73,14 @@ void output(Node * hd) {
     }
     cout << endl;
 }
-
+//add new node in front of list
 void add_node_front(Node *&head, float value){
     Node *new_node = new Node;
     new_node->value = value;
     new_node->next = head;
     head = new_node;
 }
-
+//add new node in end of list
 void add_node_tail(Node *&head, float value){
     Node *new_node = new Node;
     new_node->value = value;
@@ -95,7 +95,7 @@ void add_node_tail(Node *&head, float value){
         current->next = new_node;
     }
 }
-
+//delete node from list
 void delete_node(Node *&head, int position){
     if (!head || position < 1) return;
     Node *current = head;
@@ -114,7 +114,7 @@ void delete_node(Node *&head, int position){
         delete current;
     }
 }
-
+//inesert node in list
 void insert_node(Node *&head, int position, float value){
     if (position < 1) return;
     Node *new_node = new Node;
@@ -136,6 +136,7 @@ void insert_node(Node *&head, int position, float value){
     }
 }
 
+//delete entire list
 void delete_linked_list(Node *&head){
     Node *current = head;
     while (current){
