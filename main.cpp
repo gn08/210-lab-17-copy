@@ -10,6 +10,8 @@ struct Node {
 
 void output(Node *);
 
+
+
 int main() {
     Node *head = nullptr;
     int count = 0;
@@ -111,4 +113,24 @@ void output(Node * hd) {
         current = current->next;
     }
     cout << endl;
+}
+
+void add_node_front(){
+
+}
+
+void add_node_tail(){
+
+}
+
+void delete_node(){
+
+}
+
+void insert_node(){
+
+}
+
+void delete_linked_list(){
+
 }
