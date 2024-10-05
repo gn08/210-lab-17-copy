@@ -120,11 +120,10 @@ void output(Node * hd) {
 }
 
 void add_node_front(){
-    if (!hd){
-        cout << "Empty";
-        return 0;
-    }
-    int count
+    Node *newnode = new Node;
+    newnode->value = value;
+    newnode->next = head;
+    head = newnode;
 }
 
 void add_node_tail(){
