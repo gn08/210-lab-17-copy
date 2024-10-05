@@ -3,7 +3,7 @@
 #include <ctime>
 using namespace std;
 
-const int SIZE = 7;  
+int SIZE = 7;  
 
 struct Node {
     float value;
