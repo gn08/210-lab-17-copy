@@ -142,6 +142,23 @@ void add_node_tail(){
 }
 
 void delete_node(){
+    if (!head || position < 1) return;
+    Node *current = head;
+    Node *prev = nullptr;
+    if (position == 1) {
+        head = current->next;
+        delete current;
+        return;
+    }
+    for (int i = 1; current && i < position; i++) {
+        prev = current;
+        current = current->next;
+    }
+    if (current) {
+        prev->next = current->next;
+        delete current;
+    }
+}
 
 }
 
